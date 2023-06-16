@@ -3,7 +3,7 @@ import fs from 'fs/promises'
 import ExcelJS from 'exceljs'
 
 async function openWebPage () {
-  const browser = await puppeteer.launch({ headless: 'false', slowMo: 250 })
+  const browser = await puppeteer.launch({ headless: false, slowMo: 250 })
   const page = await browser.newPage()
   await page.goto('https://example.com')
   await browser.close()
@@ -11,7 +11,7 @@ async function openWebPage () {
 // openWebPage()
 
 async function openWebPageWithScreenshot () {
-  const browser = await puppeteer.launch({ headless: 'false', slowMo: 400 })
+  const browser = await puppeteer.launch({ headless: false, slowMo: 400 })
   const page = await browser.newPage()
   await page.goto('https://example.com')
   await page.screenshot({ path: 'example.png' })
@@ -20,7 +20,7 @@ async function openWebPageWithScreenshot () {
 // openWebPageWithScreenshot()
 
 async function openWebPageWithPDF () {
-  const browser = await puppeteer.launch({ headless: 'false', slowMo: 400 })
+  const browser = await puppeteer.launch({ headless: false, slowMo: 400 })
   const page = await browser.newPage()
   await page.goto('https://example.com')
   await page.pdf({ path: 'example.pdf' })
