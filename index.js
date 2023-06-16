@@ -120,17 +120,17 @@ async function openWebPageWithExcel () {
 // openWebPageWithExcel()
 
 async function openWebPageClickLink () {
-  const browser = await puppeteer.launch({ headless: 'false', slowMo: 400 })
+  const browser = await puppeteer.launch({ headless: false, slowMo: 400 })
   const page = await browser.newPage()
   await page.goto('https://quotes.toscrape.com')
   await page.click('a[href="/login"]')
   await page.screenshot({ path: 'example.png' })
   await browser.close()
 }
-// openWebPageClickLink()
+openWebPageClickLink()
 
 async function openWebPageGetData () {
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({ headless: false, slowMo: 400 })
   const page = await browser.newPage()
   await page.goto('https://quotes.toscrape.com')
   const result = await page.evaluate(() => {
